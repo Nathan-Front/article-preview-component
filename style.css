@@ -1,0 +1,179 @@
+:root{
+    --verydark-grayish-blue:hsl(217, 19%, 35%);
+    --desaturated-dark-blue:hsl(214, 17%, 51%);
+    --grayish-blue:hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+    --font-size:13px;
+    --font-weight5:500;
+    --font-weight7:700;
+}
+body{
+    margin: 0 auto;
+    padding: 0;
+    width: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--grayish-blue);
+    font-family: Manrope, sans-serif;
+}
+.main--container{
+    margin: 0 15em;
+    padding: 0;
+    color: var(--verydark-grayish-blue);
+    background-image: url(images/drawers.jpg);
+    background-position: left;
+    background-size: 40% 100%;
+    background-repeat: no-repeat;
+    background-color: white;
+    border-radius: 10px;
+    height: auto;
+}
+.page-title{
+    margin: 2em 3em 0 19em;
+    font-size: 1.4em;
+}
+.title-content{
+    margin: 1em 6em 1em 33em;
+    font-size: var(--font-size);
+}
+article{
+    margin: 0 3em 2.5em 27em;
+    display: flex;
+    position: relative;
+}
+.person-image{
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+}
+.person-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0 0 1em;
+    padding: 0;
+    font-size: var(--font-size);
+    font-weight: var(--font-weight7);
+}
+.person-name span{
+    font-weight: var(--font-weight5);
+}
+.share-button{
+    position: absolute;
+    right: 2.5em;
+    bottom: 0;
+    width: 7%;
+    height: 70%;
+    background:var(--light-grayish-blue);
+    border:none;
+    border-radius: 50%;
+    background-image: url(images/icon-share.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.share-button:hover {
+    cursor: pointer;
+    background:var(--grayish-blue);
+    background-image: url(images/Vectorwhite.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.hidden-links{
+    position: absolute;
+    background: var(--verydark-grayish-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--grayish-blue);
+    padding: 0 2.5em;
+    border-radius: 15px;
+    right: -5em;
+    top: -4em;
+    grid-gap: 1em;
+    display: none;
+}
+.hidden-links::after{
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    border: 20px solid transparent;
+    border-top: 0;
+    border-bottom: 20px solid var(--verydark-grayish-blue);
+    transform: rotate(180deg);
+    bottom: -1em;
+}
+.hidden-link-title{
+    text-transform: uppercase;
+    letter-spacing: .3em;
+    font-size: .9em;
+    font-weight: var(--font-weight5);
+}
+@media only screen and (max-width:1200px){
+    body{
+        background-color: var(--light-grayish-blue);
+    }
+    .main--container{
+        margin: 3em 2em;
+        background-position: top;
+        background-size: 100% 40%;
+        height: 100%;
+    }
+    .page-title{
+        margin: 11em 1.5em 0 1.5em;
+    }
+    .title-content{
+        margin: 1em 2.5em 0 2.5em;
+    }
+    article{
+        margin: 1em 2em 1em 2em;
+    }
+    .share-button{
+        right: 0;
+        z-index: 9;
+        width: 10%;
+        height: 100%;
+    }
+    .hidden-links{
+        border-radius: 0 0 10px 10px;
+        padding: 0 2em;
+        right: 0;
+        left: -2em;
+        top: -.5em;
+        bottom: -1em;
+        width: 100%;
+        justify-content: left;
+    }
+    .hidden-links::after{
+        display: none;
+    }
+}
+@media only screen and (max-width:768px){
+    .page-title{
+        margin: 8em 1.5em 0 1.5em;
+    }
+    article{
+        margin: 1.5em 2em 1em 2em;
+    }
+    .hidden-links{
+        top: -1em;
+        padding: 0 2em 0 2em;
+        vertical-align: middle;
+    }
+}
+@media only screen and (max-width:540px){
+    .person-image{
+        width: 15%;
+        height: 15%;
+    }
+    .share-button{
+        width: 15%;
+    }
+    .hidden-links{
+        top: -.5em;
+        padding: 0 2em 0 2em;
+        vertical-align: middle;
+    }
+}
