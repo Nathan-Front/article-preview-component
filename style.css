@@ -10,7 +10,7 @@
 body{
     margin: 0 auto;
     padding: 0;
-    width: auto;
+    width: 1440px;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -44,8 +44,8 @@ article{
     position: relative;
 }
 .person-image{
-    width: 10%;
-    height: 10%;
+    width: 3em;
+    height: 3em;
     border-radius: 50%;
 }
 .person-name{
@@ -64,8 +64,8 @@ article{
     position: absolute;
     right: 2.5em;
     bottom: 0;
-    width: 7%;
-    height: 70%;
+    width: 2.5em;
+    height: 2.5em;
     background:var(--light-grayish-blue);
     border:none;
     border-radius: 50%;
@@ -73,8 +73,10 @@ article{
     background-repeat: no-repeat;
     background-position: center;
 }
-.share-button:hover {
+.share-button:hover{
     cursor: pointer;
+}
+.share-button.active  {
     background:var(--grayish-blue);
     background-image: url(images/Vectorwhite.svg);
     background-repeat: no-repeat;
@@ -111,8 +113,9 @@ article{
     font-size: .9em;
     font-weight: var(--font-weight5);
 }
-@media only screen and (max-width:1200px){
+@media only screen and (max-width:1000px){
     body{
+        width: auto;
         background-color: var(--light-grayish-blue);
     }
     .main--container{
@@ -133,15 +136,13 @@ article{
     .share-button{
         right: 0;
         z-index: 9;
-        width: 10%;
-        height: 100%;
     }
     .hidden-links{
         border-radius: 0 0 10px 10px;
         padding: 0 2em;
         right: 0;
         left: -2em;
-        top: -.5em;
+        top: 0;
         bottom: -1em;
         width: 100%;
         justify-content: left;
@@ -150,30 +151,29 @@ article{
         display: none;
     }
 }
-@media only screen and (max-width:768px){
+@media only screen and (max-width:320px){
+    :root{
+        --font-size:.7em;
+    }
+    .main--container{
+        margin: 2em 1em;
+    }
     .page-title{
-        margin: 8em 1.5em 0 1.5em;
+        margin: 12em 1.5em 0 1.5em;
+        font-size: 1.2em;
     }
-    article{
-        margin: 1.5em 2em 1em 2em;
-    }
-    .hidden-links{
-        top: -1em;
-        padding: 0 2em 0 2em;
-        vertical-align: middle;
-    }
-}
-@media only screen and (max-width:540px){
     .person-image{
-        width: 15%;
-        height: 15%;
+        width: 2em;
+        height: 2em;
     }
     .share-button{
-        width: 15%;
+        width: 2em;
+        height: 2em;
     }
     .hidden-links{
-        top: -.5em;
-        padding: 0 2em 0 2em;
-        vertical-align: middle;
+        grid-gap: .5em;
+    }
+    .hidden-link-title{
+        font-size: .6em;
     }
 }
